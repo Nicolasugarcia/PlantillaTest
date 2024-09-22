@@ -31,63 +31,35 @@ public class Controller_Player : MonoBehaviour
     private Renderer render;
 
     internal GameObject laser;
+    private Vector3 initialPosition;
 
     //private List<Controller_Option> options;
-    
+
     public static Controller_Player _Player;
     
-    private void Awake()
-    {
-        if (_Player == null)
-        {
-            _Player = GameObject.FindObjectOfType<Controller_Player>();
-            if (_Player == null)
-            {
-                GameObject container = new GameObject("Player");
-                _Player = container.AddComponent<Controller_Player>();
-            }
-            //Debug.Log("Player==null");
-            DontDestroyOnLoad(_Player);
-        }
-        else
-        {
-            //Debug.Log("Player=!null");
-            //this.gameObject.SetActive(false);
-            Destroy(this.gameObject);
-        }
-    }
+
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        render = GetComponent<Renderer>();
-        powerUpCount = 0;
-        doubleShoot = false;
+        initialPosition = transform.position;
         missiles = false;
-        laserOn = false;
-        forceField = false;
+        
         //options = new List<Controller_Option>();
     }
 
     private void Update()
     {
-        CheckForceField();
+       
         ActionInput();
-    }
-
-    private void CheckForceField()
-    {
-        if (forceField)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            render.material.color = Color.blue;
-        }
-        else
-        {
-            render.material.color = Color.red;
+            transform.position = initialPosition;
         }
     }
 
+   
     public virtual void FixedUpdate()
     {
         Movement();
@@ -97,7 +69,7 @@ public class Controller_Player : MonoBehaviour
     {
         missileCount -= Time.deltaTime;
         shootingCount -= Time.deltaTime;
-        if (Input.GetKey(KeyCode.Backspace) && shootingCount < 0)
+        if (Input.GetKey(KeyCode.Space) && shootingCount < 0)
         {
             if (OnShooting != null)
             {

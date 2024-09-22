@@ -106,13 +106,4 @@ public class primerParcial : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-
-            transform.position = initialPosition;
-
-        }
-    }
 }
