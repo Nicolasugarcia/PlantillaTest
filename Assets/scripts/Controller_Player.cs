@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Controller_Player : MonoBehaviour
 {
@@ -10,18 +11,12 @@ public class Controller_Player : MonoBehaviour
     private Rigidbody rb;
 
     public GameObject projectile;
-    public GameObject doubleProjectile;
     public GameObject missileProjectile;
-    public GameObject laserProjectile;
     public GameObject option;
-    public int powerUpCount=0;
 
-    internal bool doubleShoot;
     internal bool missiles;
     internal float missileCount;
     internal float shootingCount=0;
-    internal bool forceField;
-    internal bool laserOn;
 
     public static bool lastKeyUp;
 
@@ -36,6 +31,8 @@ public class Controller_Player : MonoBehaviour
     //private List<Controller_Option> options;
 
     public static Controller_Player _Player;
+
+    public Text velocidadMostrar;
     
 
 
@@ -51,7 +48,6 @@ public class Controller_Player : MonoBehaviour
 
     private void Update()
     {
-       
         ActionInput();
         if (Input.GetKeyDown(KeyCode.R))
         {
