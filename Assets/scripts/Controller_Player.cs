@@ -97,7 +97,7 @@ public class Controller_Player : MonoBehaviour
     {
         missileCount -= Time.deltaTime;
         shootingCount -= Time.deltaTime;
-        if (Input.GetKey(KeyCode.O) && shootingCount < 0)
+        if (Input.GetKey(KeyCode.Backspace) && shootingCount < 0)
         {
             if (OnShooting != null)
             {
