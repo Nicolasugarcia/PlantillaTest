@@ -210,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 1.55, z: -38.4}
+  m_LocalPosition: {x: -0.4, y: 0, z: -16.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -274,6 +274,7 @@ GameObject:
   - component: {fileID: 338333396}
   - component: {fileID: 338333395}
   - component: {fileID: 338333401}
+  - component: {fileID: 338333402}
   - component: {fileID: 338333400}
   m_Layer: 6
   m_Name: jugador
@@ -289,7 +290,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338333394}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 853a1d7e5601d914c896efef791ec53c, type: 3}
   m_Name: 
@@ -422,13 +423,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338333394}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79ad9decee8d29940b8b4425602c4520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xLimit: 30
   yLimit: 20
+--- !u!114 &338333402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338333394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f8a12ca2e25674ba1a4ec27010deb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!1 &351208468
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +543,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.3, y: 0, z: 17.2}
-  m_LocalScale: {x: 50.543, y: 20.294, z: 1}
+  m_LocalScale: {x: 75.543, y: 25.294, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

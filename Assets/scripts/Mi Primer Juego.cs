@@ -19,15 +19,15 @@ public class primerParcial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
-    }
-    public virtual void FixedUpdate()
-    {
-        Movement();
         if (Input.GetKeyDown(KeyCode.R))
         {
             transform.position = initialPosition;
         }
+    }
+    public virtual void FixedUpdate()
+    {
+        Movement();
+        
     }
     private void Movement()
     {
