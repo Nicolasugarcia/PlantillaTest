@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public float xLimit = 220;
     public float yLimit = 220;
+   
     
     virtual public void Update()
     {
@@ -16,9 +17,18 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") )
         {
+         
             Destroy(this.gameObject);
+        
+        }
+        if (collision.gameObject.CompareTag("Power"))
+        {
+
+            Destroy(this.gameObject);
+
         }
     }
+
     //
     internal virtual void CheckLimits()
     {

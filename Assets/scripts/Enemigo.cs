@@ -36,10 +36,10 @@ public class Enemigo : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Si el enemigo colisiona con el jugador
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Power"))
         {
-            // Recargar la escena actual
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Destroy(this.gameObject);
+
         }
     }
 

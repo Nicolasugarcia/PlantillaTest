@@ -2,12 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Controller_Player : MonoBehaviour
 {
     public float speed = 5;
-
     private Rigidbody rb;
 
     public GameObject projectile;
@@ -17,8 +15,6 @@ public class Controller_Player : MonoBehaviour
     internal bool missiles;
     internal float missileCount;
     internal float shootingCount=0;
-
-    public static bool lastKeyUp;
 
     public delegate void Shooting();
     public event Shooting OnShooting;
@@ -32,10 +28,6 @@ public class Controller_Player : MonoBehaviour
 
     public static Controller_Player _Player;
 
-    public Text velocidadMostrar;
-    
-
-
 
     private void Start()
     {
@@ -43,7 +35,6 @@ public class Controller_Player : MonoBehaviour
         initialPosition = transform.position;
         missiles = false;
         
-        //options = new List<Controller_Option>();
     }
 
     private void Update()
@@ -53,12 +44,6 @@ public class Controller_Player : MonoBehaviour
         {
             transform.position = initialPosition;
         }
-    }
-
-   
-    public virtual void FixedUpdate()
-    {
-        Movement();
     }
 
     public virtual void ActionInput()
@@ -80,21 +65,8 @@ public class Controller_Player : MonoBehaviour
         }
     }
 
+   
 
-    private void Movement()
-    {
-        float inputX = Input.GetAxis("Horizontal");
-        float inputY = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(speed* inputX,speed * inputY);
-        rb.velocity = movement;
-        if (Input.GetKey(KeyCode.W))
-        {
-            lastKeyUp = true;
-        }else
-        if (Input.GetKey(KeyCode.S))
-        {
-            lastKeyUp = false;
-        }
-    }
+
 
 }
