@@ -19,8 +19,6 @@ public class Controller_Player : MonoBehaviour
     public delegate void Shooting();
     public event Shooting OnShooting;
 
-    private Renderer render;
-
     internal GameObject laser;
     private Vector3 initialPosition;
 

@@ -21,6 +21,7 @@ public class Enemigo : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             transform.position = initialPosition;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         MoveTowardsPlayer();
     }

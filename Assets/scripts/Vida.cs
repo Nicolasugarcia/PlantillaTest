@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro; // Necesario para trabajar con TextMeshPro
 
 public class PlayerHealthTMP : MonoBehaviour
@@ -24,6 +25,7 @@ public class PlayerHealthTMP : MonoBehaviour
             transform.position = initialPosition;
             if (playerHealth <= 0)
             {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 Debug.Log("Game Over");
               
             }
