@@ -32,5 +32,14 @@ public class Enemigo : MonoBehaviour
         
         transform.position += direction * speed * Time.deltaTime;
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Si el enemigo colisiona con el jugador
+        if (collision.gameObject.CompareTag("Bala"))
+        {
+            Destroy(this.gameObject);
+
+        }
+    }
 
 }
