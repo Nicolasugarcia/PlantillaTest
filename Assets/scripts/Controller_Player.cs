@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Controller_Player : MonoBehaviour
 {
@@ -38,11 +39,13 @@ public class Controller_Player : MonoBehaviour
     private void Update()
     {
         ActionInput();
+     
         if (Input.GetKeyDown(KeyCode.R))
         {
-            transform.position = initialPosition;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-    }
+    
+}
 
     public virtual void ActionInput()
     {

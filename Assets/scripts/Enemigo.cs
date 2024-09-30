@@ -13,17 +13,15 @@ public class Enemigo : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        initialPosition = transform.position;
 
     }
     void Update()
     {
+        MoveTowardsPlayer();
         if (Input.GetKeyDown(KeyCode.R))
         {
-            transform.position = initialPosition;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        MoveTowardsPlayer();
     }
 
     private void MoveTowardsPlayer()

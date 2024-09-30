@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Controller_Projectile : Projectile
 {
@@ -20,7 +21,14 @@ public class Controller_Projectile : Projectile
         ProjectileDirection();
         base.Update();
     }
-
+    public virtual void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        
+    }
     public virtual void ProjectileDirection()
     {
         rb.velocity = new Vector3(1 * projectileSpeed, rb.velocity.y, 0);

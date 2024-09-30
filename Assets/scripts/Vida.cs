@@ -4,7 +4,7 @@ using TMPro; // Necesario para trabajar con TextMeshPro
 
 public class PlayerHealthTMP : MonoBehaviour
 {
-    public int playerHealth = 100; // Vida inicial del jugador
+    public int playerHealth = 100; 
     public TextMeshProUGUI healthText; // Referencia al texto de TextMeshPro UI
     private Vector3 initialPosition;
 
@@ -13,11 +13,16 @@ public class PlayerHealthTMP : MonoBehaviour
         UpdateHealthText();
         initialPosition = transform.position;
     }
+    public virtual void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
 
-    // Método que se llama cuando ocurre una colisión
     void OnCollisionEnter(Collision collision)
     {
-        // Si colisiona con un objeto que tiene la etiqueta "Enemy"
         if (collision.gameObject.CompareTag("Enemy"))
         {
             playerHealth -= 20;

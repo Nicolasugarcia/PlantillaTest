@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movimiento : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class Movimiento : MonoBehaviour
     }
     public virtual void FixedUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         Movement();
     }
     private void Movement()
