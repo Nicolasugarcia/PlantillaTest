@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class Enemigo : MonoBehaviour
 {
 
-    public Transform player; // Referencia al jugador
-    public float speed = 3f; // Velocidad de movimiento del enemigo
+    public Transform player; 
+    public float speed = 3f; 
     private Vector3 initialPosition;
     private Rigidbody rb;
     void Start()
@@ -31,15 +31,6 @@ public class Enemigo : MonoBehaviour
 
         
         transform.position += direction * speed * Time.deltaTime;
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        // Si el enemigo colisiona con el jugador
-        if (collision.gameObject.CompareTag("Power"))
-        {
-            Destroy(this.gameObject);
-
-        }
     }
 
 }
