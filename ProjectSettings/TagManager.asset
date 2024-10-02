@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Enemy
   - Power
+  - Bala
   layers:
   - Default
   - TransparentFX
